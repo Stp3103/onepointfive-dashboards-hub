@@ -1,0 +1,180 @@
+correct_dependency_ids: {C6ZZPAPN4YYF5NVJ: C6ZZPAPN4YYF5NVJ, dep_iyhji3k47lypmk: QEGZCPZFGSFDARJT}
+dependencies:
+- app_id: C6ZZPAPN4YYF5NVJ
+  version: {dev: false}
+- dep_id: dep_iyhji3k47lypmk
+  version: {dev: false}
+  resolution_hints: {app_id: QEGZCPZFGSFDARJT, name: Clone of Custom sign-up flow,
+    package_name: custom_signup}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: false, use_email: true,
+    confirm_email: false, require_secure_passwords: true, allow_remember_me: true,
+    remember_me_days: 30, share_login_status: true}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {}
+startup: {type: module, module: Login_form.Module1}
+package_name: OnePointFive_Estate_HUB
+allow_embedding: false
+name: Clone of OnePointFive_PC_Estate_HUB (4)
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: null
+  server_spec_disabled: {base: python310-standard, pre_install_script: 'apt-get update
+
+      apt-get install -y unixodbc unixodbc-dev
+
+      curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+      curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+      apt-get update
+
+      ACCEPT_EULA=Y apt-get install -y msodbcsql17
+
+      pip install pyodbc==4.0.26
+
+      ', requirements: 'pandas==2.1.0rc0
+
+      openpyxl
+
+      pyodbc
+
+      SQLAlchemy
+
+      pandas-schema
+
+      bcrypt
+
+      XlsxWriter'}
+metadata: {logo_img: 'asset:OPF diamond from website 20240213-logo.jpeg', title: Estate,
+  description: Modelling of decarbonisation programmes for property estates}
+startup_form: null
+native_deps: {head_html: ''}
+db_schema:
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: file_version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: Files
+  old_users:
+    title: Old_users_admin
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 100}
+      type: bool
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: name
+      admin_ui: {order: 3.5, width: 200}
+      type: string
+    - name: link_key
+      admin_ui: {width: 200}
+      type: string
+    - name: role
+      admin_ui: {order: 3.75, width: 200}
+      type: string
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: remembered_logins
+      type: simpleObject
+      admin_ui: {order: 10, width: 200}
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: role
+      admin_ui: {width: 200}
+      type: string
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: link_key
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: remembered_logins
+      admin_ui: {width: 200}
+      type: simpleObject
+secrets:
+  dev_database_name:
+    value: {? '' : /OmZY4TXX0PLjHqdViaHDd5nPGaanAWzlgRpbH+rF+UA2vjEffcohYw0svh/HF7pDjXXYTThkKn3rPWrsdCCf/Bs3V2PVotVHwGLIC0TcfxtyeCeCry7+jqQoDe2IQL3MCVQq6pujET1enMp9KzijCZlCj70d2c=}
+    type: secret
+  dev_database_user_name:
+    value: {? '' : gzIubpRXuw+cU+wnobt+e1eXmrqiNN29wS0Dkz7wnzFUi41pzYyd3LCh6HX0k/mDqogW/TkOnlMxcTX9itCThttmrMVrzmzF7nN+u2WPD5PIGms+F6ixrJDIIbsQzZ5gNDJbaFGbUpEjhFF4UqodRXPrTN8sc1U=}
+    type: secret
+  dev_database_password:
+    value: {4JLSC5OAP5ZCPZC4: b8cAHPbCPQgmZImRIZd1qlx/ZmL6H0gIMz7j6t6p5m4d2Vik/6X21ZiItQqqOqQPZL904A2VWp1pLc7gYGUGsOmnk5KfpzSWoida96lm/+nHu2eyl+NYOUWU4oo9gpovGsjO75D0ZDK/sg==}
+    type: secret
+  prod_database_name:
+    value: {? '' : xpFeYY+Kn3D6k5fBPEIGCO3LaFUQ7bAauIM1dmRUopDVLXEcKuQGYgNYruf/yGkrCuoc2dnzv3/Y6wz6Ryz3l7RuopFt/2DIIqv6I+PVacjY7PtsnL2PWtwzS5VLMkVQR2CURaWV4zMeKWHGILSVWxGmbcQ5tcA=,
+      4JLSC5OAP5ZCPZC4: kPZ1CXmNla5PcD4pE9OPH0Cv/SgV2oVymVIgnNZvhuZao4VklL/NjJzAO9rqa9D3PVOgeZiOlDfEfHvqhRo3F6S2P9gL3pfT9gozcE+Ik7RBGz1ONOKOqFlTpEeqHg/ym4eWCXQJfHeH3YxcrnbVI6iNsiPr2sk=}
+    type: secret
+  prod_database_password:
+    value: {? '' : YGd2Zq6mWiX11G8f1Uk3MoL1qVre8f6hPRvVZ59zgvXd6knEBKqvoRaJo4PfwqfdqfKBjzKJPTXR3BSNMunJWg2KiaiP1tw/6aRoKBFfO9iYdvaMaeQENwFQYl6wDGiXPm4/Mg9JAilg2Q==,
+      4JLSC5OAP5ZCPZC4: cMnrvail0pOHNkI7lDATxY06KWdwRDQHX7jZYHjnBSNvo0qGLxodeAbW5sBN9OdLr+HeY7hM1s7Wpv1JU98ARxkR3+C4zgQTzVzEZJ3O+hIvYLiUcZ8wtR83/O68sU21ES2cXmHK0J442w==}
+    type: secret
+  prod_database_user_name:
+    value: {? '' : X+7YxDvNRh4MZ0rjGAMEr7lTOBBJi2etXJAqbBl/sgy74GkatxnWbKADz/rByGRhBMFzPu6bVMdj11w5tyj5aJ5O2bnT2s4xT5WDl0uI2BaOyZtxmGm0XvBHSaK+8daTbKbjM9l7JU08ML6tAEgpKDLmp6lJ6As=,
+      4JLSC5OAP5ZCPZC4: pAEj9DoLyV6xcKI8vjm9k28qxQEqLlIWdKkdkrI8w2lklRGym5VknUlu3c6eRC7nFvuovhchxHhzSxxhPcpMVlscpinyD5gMxOYctJ5RISlR2BksW6oFH0MYvFSO7ODPuqVtzW4QJKXAD62WP/I=}
+    type: secret
+  upload_auth_key:
+    value: {4JLSC5OAP5ZCPZC4: eah6cjkN76oPWJSnHn9OBLZ6gbKwUyHDD9pShYHgSTDZ1sfmPwr0x6rtzoAG5um7LPsjoezUPnJ4V1Bg0g4ODxDdKudK9co9PskHkTsWRCFbbsZkzjsTPqP58KD7kUekjW2RcJ0YOcAjiuNn3TWTZIIRnLbpbOPrkoBm/TglJ3t3EtYJ4p2xjuOEjS3x}
+    type: secret
+  protect_workbook:
+    value: {4JLSC5OAP5ZCPZC4: TjK47OS1xPnHC1wNb9kwWy/Z19nAmsVMaXWAgCJuo+vq5nADen18M12ghuNcYofXXfDZQv1FhCT6k7eijbtnbeZUGyptvlHHFV0hwn36lhumdYG69G62jm/95scEW7P2HqAFvT17NCmC}
+    type: secret
+renamed: true

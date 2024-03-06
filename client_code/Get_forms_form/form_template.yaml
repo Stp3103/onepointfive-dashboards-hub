@@ -1,0 +1,99 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Button
+  properties: {role: null, align: right, tooltip: '', border: '', enabled: true, foreground: 'theme:Secondary
+      700', visible: true, text: '', font_size: 24, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:info'}
+  name: info_button
+  layout_properties: {grid_position: 'WDDKTO,LXQAVS'}
+- type: Label
+  properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: "Use the dropdown below to select the Data Capture Form you\
+      \ require. \n \nClick the button below to download your selected Form.\n\n",
+    font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: Get_forms_header
+  layout_properties: {grid_position: 'URCTGB,UVVKIB'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'CVYBNE,BDOUCA'}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: ''
+    border: ''
+    enabled: true
+    foreground: ''
+    items: ['Select type of form here: -', Partner Estate Data, Project initialisation,
+      Project details, Project progress, '', Specials]
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: false
+  name: select_type_of_form
+  layout_properties: {grid_position: 'KTOQRP,ZVLHSL'}
+  event_bindings: {change: select_form_for_download}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'GBVRWD,IICECM'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: false,
+    text: 'Input number of assets to be initialised:', font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
+  name: label_number_of_assets
+  layout_properties: {grid_position: 'TTFWYR,JYTVOV'}
+- type: TextBox
+  properties: {role: null, align: right, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: false, foreground: '', visible: false, text: '', font_size: null,
+    font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: number_of_assets
+  layout_properties: {grid_position: 'TTFWYR,SQZEUZ'}
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Click here to download form, font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
+  name: download_form_button
+  layout_properties:
+    col_widths: {}
+    grid_position: NRSWLV,DHTTVS
+    full_width_row: true
+  event_bindings: {click: download_forms_click}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_11
+  layout_properties: {grid_position: 'BGVJYX,OMFRMT'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: false,
+    text: 'Summary of progress: -', font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: summary_of_progress
+  layout_properties: {grid_position: 'XKEUZN,RDSYGP'}
+- type: TextArea
+  properties: {role: null, align: left, height: '', tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+    auto_expand: false, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: summary_text
+  layout_properties: {grid_position: 'DUIQXM,YPSDDN'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_9
+  layout_properties: {grid_position: 'PJPFUS,ORDSCQ'}
+is_package: true

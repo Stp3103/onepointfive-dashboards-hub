@@ -1,0 +1,80 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"EMCKKM":45,"DQSMSE":15}'}
+components:
+- type: Button
+  properties: {role: null, align: right, tooltip: '', border: '', enabled: true, foreground: 'theme:Secondary
+      700', visible: true, text: '', font_size: 24, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: 'fa:info'}
+  name: info_button
+  layout_properties:
+    col_widths: {}
+    grid_position: UVROEX,EMCKKM VHJIWY,GEDSTP
+  event_bindings: {click: info_gas_elec_savings}
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: 'theme:Gray 800', visible: true, font_size: 18, content: "Resolve\
+      \ failures of gas and electricity savings checks. \n\n1 - Select gas or electricity\
+      \ savings checks from the dropdown below\n2 - A list of buildings will appear\
+      \ which have failed the selected checks.\n3 - For each building in the Project\
+      \ Details Upload sheet adjust the percentage savings in projects where the utility\
+      \ selected is either gas or electricity (as selected).\n4 - Rerun the Project\
+      \ Details upload.", font: '', spacing_above: small, spacing_below: small, data: null,
+    background: '', format: markdown}
+  name: rich_text_1
+  layout_properties:
+    col_widths: {}
+    grid_position: UVROEX,EMCKKM VZMXUN,VUCHHP
+  components:
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {}
+  - type: Label
+    properties: {}
+    name: summary
+    layout_properties: {grid_position: 'UVROEX,EMCKKM VZMXUN,JOVRCA'}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: ''
+    border: ''
+    enabled: true
+    foreground: ''
+    items: ['']
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: false
+  name: drop_down_1
+  layout_properties: {grid_position: 'UVROEX,EMCKKM FKAMDW,DZYCLE'}
+  event_bindings: {change: select_type_of_check}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'UVROEX,EMCKKM EZXCZH,RGGHNG'}
+- type: TextArea
+  properties: {role: null, align: left, height: 176, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    auto_expand: true, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: buildings_list
+  layout_properties: {grid_position: 'UVROEX,EMCKKM IIOANF,LYUSFF'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_5
+  layout_properties: {grid_position: 'UVROEX,EMCKKM JCPKUZ,FDBHOV'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_6
+  layout_properties: {grid_position: 'UVROEX,DQSMSE'}
+is_package: true

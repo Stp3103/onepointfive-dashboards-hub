@@ -1,0 +1,40 @@
+container: {type: ColumnPanel}
+components:
+- name: maintain_partner_label
+  properties: {text: 'Maintain Partners
+
+      ', bold: true, font_size: 16}
+  type: Label
+  layout_properties: {grid_position: 'USNVCV,JTDYAJ'}
+- name: tabs_1
+  properties:
+    tab_titles: [Add Partner, Delete Partner, Amend Partner]
+    foreground: theme:Black
+  type: form:C6ZZPAPN4YYF5NVJ:Tabs
+  layout_properties: {grid_position: 'JIAPPV,MYFNYP'}
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'ECVMBQ,RSSLEH'}
+  components: []
+- name: spacer_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {grid_position: 'CSQWFQ,PEYPAX'}
+- name: maintain_partner_label_copy
+  properties: {text: 'Maintain X - Partner Groups
+
+      ', bold: true, font_size: 16}
+  type: Label
+  layout_properties: {grid_position: 'VECGZB,UIABTV'}
+- name: tabs_1_copy
+  properties:
+    tab_titles: [Add X-Partner Group, Delete X-Partner Group, Amend X-Partner Group]
+    foreground: theme:Black
+  type: form:C6ZZPAPN4YYF5NVJ:Tabs
+  layout_properties: {grid_position: 'UYIGFN,JKHYXQ'}
+- name: column_panel_1_copy
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'XBCLTG,GEJIIX'}
+is_package: true
