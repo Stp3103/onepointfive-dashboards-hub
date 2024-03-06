@@ -27,7 +27,7 @@ services:
 startup: {type: module, module: Login_form.Module1}
 package_name: OnePointFive_Estate_HUB
 allow_embedding: false
-name: OnePointFive Dashboards
+name: OnePointFive_Dashboards
 runtime_options:
   version: 2
   client_version: '3'
