@@ -243,7 +243,15 @@ class Main_menu_form(Main_menu_formTemplate):
     get_open_form().content_panel.clear()
     get_open_form().content_panel.add_component(new_panel)
     pass
-
+  def menu_MACC_click(self, **event_args):
+   # self.reset_links()
+   # self.upload_data_link.role = 'selected'
+    """This method is called when the link is clicked"""
+    from ..MACC import MACC
+    new_panel = MACC()
+    get_open_form().content_panel.clear()
+    get_open_form().content_panel.add_component(new_panel)
+    pass
   def menu_download_results_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()

@@ -69,6 +69,11 @@ components:
     layout_properties: {grid_position: 'XFUUHS,DMQPYI'}
     components: []
     event_bindings: {click: menu_get_data_capture_forms_click}
+  - name: menu_macc_link
+    properties: {text: '        MACC'}
+    type: Link
+    layout_properties: {grid_position: 'JMCMCT,GFAZEA'}
+    event_bindings: {click: menu_MACC_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
       visible: true, text: '        Upload data', font_size: null, wrap_on: mobile,
