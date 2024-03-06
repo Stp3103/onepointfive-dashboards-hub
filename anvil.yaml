@@ -27,7 +27,7 @@ services:
 startup: {type: module, module: Login_form.Module1}
 package_name: OnePointFive_Estate_HUB
 allow_embedding: false
-name: Clone of OnePointFive_PC_Estate_HUB (4)
+name: Dashboards
 runtime_options:
   version: 2
   client_version: '3'
@@ -60,8 +60,8 @@ runtime_options:
       bcrypt
 
       XlsxWriter'}
-metadata: {logo_img: 'asset:OPF diamond from website 20240213-logo.jpeg', title: Estate,
-  description: Modelling of decarbonisation programmes for property estates}
+metadata: {logo_img: 'asset:OPF diamond from website 20240213-logo.jpeg', title: Dashboards,
+  description: Dashboards for decarbonisation target entities}
 startup_form: null
 native_deps: {head_html: ''}
 db_schema:
