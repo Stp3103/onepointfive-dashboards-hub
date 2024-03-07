@@ -1022,31 +1022,41 @@ def call_get_MACC_data(entity_number):
   yin       = dfb['annual_abatement_cost_tCO2e'].tolist()
   ptin      = dfb['project_type_id'].tolist()
 
+  xout = []
+  for r in xin:
+    f = float(r)
+    xout.append(f)
+  yout = []
+  for r in yin:
+    f = float(r)
+    yout.append(f)
+
+  
 #  Convert to blob media
 #  x         = anvil.BlobMedia(content=bytestream.read(xin), content_type="application/octet-stream", name = "x")  
 #  y         = anvil.BlobMedia(content=bytestream.read(yin), content_type="application/octet-stream", name = "y")
 #  pt        = anvil.BlobMedia(content=bytestream.read(ptin), content_type="application/octet-stream", name = "pt
   
-  content   = xin
-  file      = bytes(content)
-  bytestream= io.BytesIO(file)
-  bytestream.seek(0)
-  x         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "x") 
+#  content   = xin
+#  file      = bytes(content)
+#  bytestream= io.BytesIO(file)
+#  bytestream.seek(0)
+#  x         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "x") 
 
-  content   = yin
-  file      = bytes(content)
-  bytestream= io.BytesIO(file)
-  bytestream.seek(0)
-  y         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "y") 
+ # content   = yin
+ # file      = bytes(content)
+#  bytestream= io.BytesIO(file)
+#  bytestream.seek(0)
+#  y         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "y") 
 
-  content   = ptin
-  file      = bytes(content)
-  bytestream= io.BytesIO(file)
-  bytestream.seek(0)
-  pt        = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "pt")    
-  ret['x']  = x
-  ret['y']  = y
-  ret['pt'] = pt
+#  content   = ptin
+#  file      = bytes(content)
+#  bytestream= io.BytesIO(file)
+#  bytestream.seek(0)
+#  pt        = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "pt")    
+  ret['x']  = xout
+  ret['y']  = yout
+  ret['pt'] = ptin
 
   return ret
   
