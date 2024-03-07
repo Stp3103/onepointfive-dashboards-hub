@@ -1010,6 +1010,21 @@ def get_project_types():
   return ret_mess
 
 @anvil.server.callable
+def call_get_MACC_data(entity_number):
+  ret       = {'ef':0, 'em':'', 'x':0, 'y':0, 'pt': 0}
+  ret_mess  = get_MACC_data(entity_number)
+  ef        = ret_mess['ef']
+  em        = ret_mess['em']
+  dfb       = ret_mess['data']
+  print('In call get MACC')
+  print(dfb.to_string())
+  x         = dfb['lifetime_tonnes_CO2e'].tolist()
+  y         = dfb['annual_abatement_cost_tCO2e'].tolist()
+  pt        = dfb['project_type_id'].tolist()
+
+  return ef,em,x,y,pt
+  
+  
 def get_MACC_data(entity_number):
   # Gets the data required to plot a MACC chart from project_results table for entity specified by entity_number.
   

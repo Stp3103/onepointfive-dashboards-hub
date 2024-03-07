@@ -23,16 +23,14 @@ class MACC(MACCTemplate):
   pass
 
   def create_example_MACC(self, **properties):
-    ret_mess = anvil.server.call('get_MACC_data',1005)
-    ef       = ret_mess['ef']
-    em       = ret_mess['em']
-    df       = ret_mess['data']
-    dfb      = pd.DataFrame.from_dict (df)
+    ef,em,x,y,pt = anvil.server.call('call_get_MACC_data',1005)
+    
     if ef > 0:
       alert(f"**Error getting MACC data - {em}")
       return
     else:
-      alert("Printing dataframe to app log")
-      print(dfb.to_string())
+      alert("Printing x,y to app log")
+      print(x)
+      print(y)
       pass
       
