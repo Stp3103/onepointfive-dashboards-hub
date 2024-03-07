@@ -1018,12 +1018,32 @@ def call_get_MACC_data(entity_number):
   dfb       = ret_mess['data']
   print('In call get MACC')
   print(dfb.to_string())
-#  x         = dfb['lifetime_tonnes_CO2e'].tolist()
-#  y         = dfb['annual_abatement_cost_tCO2e'].tolist()
-#  pt        = dfb['project_type_id'].tolist()
-  x = 33
-  y =44
-  pt = 55
+  xin       = dfb['lifetime_tonnes_CO2e'].tolist()
+  yin       = dfb['annual_abatement_cost_tCO2e'].tolist()
+  ptin      = dfb['project_type_id'].tolist()
+
+#  Convert to blob media
+#  x         = anvil.BlobMedia(content=bytestream.read(xin), content_type="application/octet-stream", name = "x")  
+#  y         = anvil.BlobMedia(content=bytestream.read(yin), content_type="application/octet-stream", name = "y")
+#  pt        = anvil.BlobMedia(content=bytestream.read(ptin), content_type="application/octet-stream", name = "pt
+  
+  content   = xin
+  file      = bytes(content)
+  bytestream= io.BytesIO(file)
+  bytestream.seek(0)
+  x         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "x") 
+
+  content   = yin
+  file      = bytes(content)
+  bytestream= io.BytesIO(file)
+  bytestream.seek(0)
+  y         = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "y") 
+
+  content   = ptin
+  file      = bytes(content)
+  bytestream= io.BytesIO(file)
+  bytestream.seek(0)
+  pt        = anvil.BlobMedia(content=bytestream.read(file), content_type="application/octet-stream", name = "pt")    
   ret['x']  = x
   ret['y']  = y
   ret['pt'] = pt
