@@ -29,6 +29,7 @@ class MACC(MACCTemplate):
     x   = ret['x']
     y   = ret['y']
     pt  = ret['pt']
+
     if ef > 0:
       alert(f"**Error getting MACC data - {em}")
       return

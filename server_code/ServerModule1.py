@@ -1018,9 +1018,12 @@ def call_get_MACC_data(entity_number):
   dfb       = ret_mess['data']
   print('In call get MACC')
   print(dfb.to_string())
-  x         = dfb['lifetime_tonnes_CO2e'].tolist()
-  y         = dfb['annual_abatement_cost_tCO2e'].tolist()
-  pt        = dfb['project_type_id'].tolist()
+#  x         = dfb['lifetime_tonnes_CO2e'].tolist()
+#  y         = dfb['annual_abatement_cost_tCO2e'].tolist()
+#  pt        = dfb['project_type_id'].tolist()
+  x = 33
+  y =44
+  pt = 55
   ret['x']  = x
   ret['y']  = y
   ret['pt'] = pt
