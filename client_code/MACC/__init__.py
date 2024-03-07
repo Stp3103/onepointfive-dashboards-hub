@@ -2,6 +2,7 @@
 from ._anvil_designer import MACCTemplate
 from anvil import *
 import plotly.graph_objects as go
+
 import anvil.server
 import anvil.users
 import anvil.tables as tables
@@ -35,7 +36,10 @@ class MACC(MACCTemplate):
       return
     else:
       alert("Printing x,y to app log")
-      print(x)
-      print(y)
+     # print(x)
+     # print(y)
+      self.plot_1.data[
+      go.scatter( x=y, y=y,
+                 title="Marginal Abatement Cost Curve")]
       pass
       
