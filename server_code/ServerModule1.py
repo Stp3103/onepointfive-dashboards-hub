@@ -1011,7 +1011,7 @@ def get_project_types():
 
 @anvil.server.callable
 def call_get_MACC_data(entity_number):
-  ret       = {'ef':0, 'em':'', 'x':0, 'y':0, 'pt': 0}
+  ret       = {'ef':0, 'em':'', 'x':[], 'y':[], 'pt': []}
   ret_mess  = get_MACC_data(entity_number)
   ef        = ret_mess['ef']
   em        = ret_mess['em']
@@ -1021,8 +1021,11 @@ def call_get_MACC_data(entity_number):
   x         = dfb['lifetime_tonnes_CO2e'].tolist()
   y         = dfb['annual_abatement_cost_tCO2e'].tolist()
   pt        = dfb['project_type_id'].tolist()
+  ret['x']  = x
+  ret['y']  = y
+  ret['pt'] = pt
 
-  return ef,em,x,y,pt
+  return ret
   
   
 def get_MACC_data(entity_number):

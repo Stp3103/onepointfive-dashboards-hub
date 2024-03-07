@@ -23,8 +23,12 @@ class MACC(MACCTemplate):
   pass
 
   def create_example_MACC(self, **properties):
-    ef,em,x,y,pt = anvil.server.call('call_get_MACC_data',1005)
-    
+    ret = anvil.server.call('call_get_MACC_data',1005)
+    ef  = ret['ef']
+    em  = ret['em']
+    x   = ret['x']
+    y   = ret['y']
+    pt  = ret['pt']
     if ef > 0:
       alert(f"**Error getting MACC data - {em}")
       return
