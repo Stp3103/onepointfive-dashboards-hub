@@ -24,6 +24,7 @@ from rich.table import Table
 import Project_types as pt
 import Benchmarks as bm
 from tabulate import tabulate
+import anvil.mpl_util
 
 import anvil.media
 import openpyxl 
@@ -1043,17 +1044,21 @@ def call_get_MACC_data(entity_number):
 def get_MACC_data(entity_number):
   # Gets the data required to plot a MACC chart from project_results table for entity specified by entity_number.
   
-  ret_mess = {'ef':0, 'em':'', 'data':''}
+  ret_mess = {'ef':0, 'em':'', 'data':'', 'widths': ''}
   
   try:
-    sqlmaccdata    = f"SELECT entity_number, project_type_id, lifetime_tonnes_CO2e, annual_abatement_cost_tCO2e FROM project_results WHERE entity_number ={entity_number};"
-
+    
+    sqlmaccdata    =  f"SELECT pr.entity_number, pr.project_type_id, pr.carbon_savings, pr.lifetime_tonnes_CO2e, pr.annual_abatement_cost_tCO2e, pt.name, re.building_name FROM project_results AS pr \
+                       INNER JOIN project_types AS pt ON pr.project_type_id = pt.project_type_id \
+                       INNER JOIN raw_estate_data AS re ON pr.uprn = re.uprn AND pr.entity_number = re.entity_number \
+                       WHERE pr.entity_number ={entity_number};"
+    
     conn           = initialise_database_connection(app.branch)
-    keys           = ('name','project_type_id')
+    
     with conn.cursor() as cursor:
       cursor.execute(sqlmaccdata)
       t_output_bl  = cursor.fetchall()
-      keys         = ("entity_number", "project_type_id", "lifetime_tonnes_CO2e", "annual_abatement_cost_tCO2e")
+      keys         = ("entity_number", "project_type_id", "carbon_savings", "lifetime_tonnes_CO2e", "annual_abatement_cost_tCO2e", "name", "building_name")
       output_bl    = [dict(zip(keys, values)) for values in t_output_bl]
     
       if len(output_bl) == 0:
@@ -1064,8 +1069,36 @@ def get_MACC_data(entity_number):
       # Convert dict to dataframe
       
       dfb                = pd.DataFrame.from_dict (output_bl) 
+
+      # Sort dataframe on ascending annual abatement cost
+
+      dfb                = dfb.sort_values(by=['annual_abatement_cost_tCO2e'])
+
+      # Add an order column
+
+      dfb['row_number'] = dfb.reset_index().index
+
       print(dfb.to_string())
+
+      # Calculate normalised widths
+
+      dfb['lifetime_tonnes_CO2e']        = dfb['lifetime_tonnes_CO2e'].astype(float)
+      dfb['annual_abatement_cost_tCO2e'] = dfb['annual_abatement_cost_tCO2e'].astype(float)
+      dfb['carbon_savings']              = dfb['carbon_savings'].astype(float)
+      lfttCO2                            = dfb['lifetime_tonnes_CO2e']
+      total_CO2                          = sum(lfttCO2)
+      norm_widths                        = []
+      print('lfttCO2')
+      print(lfttCO2)
+      for r in lfttCO2:
+        ntc = (r/total_CO2) * len(lfttCO2)
+        norm_widths.append(ntc)
+
+#      print(dfb.to_string())
+#      print('--Norm widths')
+#      print(norm_widths)
       ret_mess['data']   = dfb
+      ret_mess['widths'] = norm_widths 
       return ret_mess
   except Exception as e: 
     msg1 = f"******An exception has occurred in 'get_MACC_data'. Please contact OPF support at support@onepointfive.uk:\n"
@@ -1080,34 +1113,48 @@ def get_MACC_data(entity_number):
 def make_MACC_plot():
   import matplotlib.pyplot as plt
   import numpy as np
-
-  fig, ax = plt.subplots()
-
-  years = df['year']
-  x = np.arange(len(years))
-
-  # Must manually calculate the x-positions of the bars
-  width = 0.2
-  ax.bar(x - 3*width/2, df['conservative'], width, label='Conservative', color='#0343df')
-  ax.bar(x - width/2, df['labour'], width, label='Labour', color='#e50000')
-  ax.bar(x + width/2, df['liberal'], width, label='Liberal', color='#ffff14')
-  ax.bar(x + 3*width/2, df['others'], width, label='Others', color='#929591')
-
-  # Notice that features like labels and titles are added in separate steps
-  ax.set_ylabel('Seats')
-  ax.set_title('UK election results')
-
-  ax.set_xticks(x)    # This ensures we have one tick per year, otherwise we get fewer
-  ax.set_xticklabels(years.astype(str).values, rotation='vertical')
-
-  ax.legend(loc="lower right")
-
-  # Here's the extra line plot
-  ax.plot(x, df['conservative'] - df['labour'], label='Conservative lead over Labour', color='black', linestyle='dashed')
-  ax.grid(color='#cccccc')
-  ax.set_axisbelow(True)
-  ax.set_ylim([-500, 500])
+  try:
+  # Get MACC data
+    ret    = get_MACC_data(1005)
+    ef     = ret['ef']
+    em     = ret['em']
+    maccdf = ret['data']
+    widths = ret['widths']
+    
+    fig, ax = plt.subplots()
   
-  fig.tight_layout(pad=1)
+#    years = df['year']
+#    x = np.arange(len(years))
   
-  return anvil.mpl_util.plot_image()
+    # Must manually calculate the x-positions of the bars
+#    width = 0.2
+#    ax.bar(x - 3*width/2, df['conservative'], width, label='Conservative', color='#0343df')
+#    ax.bar(x - width/2, df['labour'], width, label='Labour', color='#e50000')
+ #   ax.bar(x + width/2, df['liberal'], width, label='Liberal', color='#ffff14')
+#    ax.bar(x + 3*width/2, df['others'], width, label='Others', color='#929591')
+    ax.bar(x = maccdf['row_number'], height=maccdf['annual_abatement_cost_tCO2e'],width=widths,align='center')
+    
+    # Notice that features like labels and titles are added in separate steps
+    ax.set_ylabel('Abatement cost per tCO2e')
+    ax.set_title('MACC for entity Wirral')
+  
+   # ax.set_xticks(x)    # This ensures we have one tick per year, otherwise we get fewer
+   # ax.set_xticklabels(years.astype(str).values, rotation='vertical')
+  
+    ax.legend(loc="lower right")
+  
+    # Here's the extra line plot
+    #ax.plot(x, df['conservative'] - df['labour'], label='Conservative lead over Labour', color='black', linestyle='dashed')
+    #ax.grid(color='#cccccc')
+   # ax.set_axisbelow(True)
+    #ax.set_ylim([-500, 500])
+    
+    fig.tight_layout(pad=1)
+    
+    return anvil.mpl_util.plot_image()
+  except Exception as e: 
+    msg1 = f"******An exception has occurred in 'get_MACC_data'. Please contact OPF support at support@onepointfive.uk:\n"
+    msg2 = "".join(traceback.format_exception(type(e), e, e.__traceback__))
+    print(f"{msg1}{msg2}\n")
+    return None
+   
