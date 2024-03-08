@@ -39,6 +39,7 @@ import calendar
 
 import sys, traceback
 from dateutil.relativedelta import *
+import matplotlib as mpl
 
 
 # This is a server module. It runs on the Anvil server,
