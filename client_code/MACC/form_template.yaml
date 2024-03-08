@@ -27,8 +27,8 @@ components:
   properties: {height: 32}
   type: Spacer
   layout_properties: {grid_position: 'AHEMQG,GAZJUE'}
-- name: plot_1
-  properties: {height: '800'}
-  type: Plot
-  layout_properties: {grid_position: 'YYLJBP,LJKRYK'}
+- name: image_1
+  properties: {height: 520}
+  type: Image
+  layout_properties: {grid_position: 'OCNDKF,FCZRSO'}
 is_package: true

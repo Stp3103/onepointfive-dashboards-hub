@@ -24,22 +24,20 @@ class MACC(MACCTemplate):
   pass
 
   def create_example_MACC(self, **properties):
-    ret = anvil.server.call('call_get_MACC_data',1005)
-    ef  = ret['ef']
-    em  = ret['em']
-    x   = ret['x']
-    y   = ret['y']
-    pt  = ret['pt']
+#    ret = anvil.server.call('call_get_MACC_data',1005)
+#    ef  = ret['ef']
+#    em  = ret['em']
+#    x   = ret['x']
+#    y   = ret['y']
+#    pt  = ret['pt']
 
-    if ef > 0:
-      alert(f"**Error getting MACC data - {em}")
-      return
-    else:
+#    if ef > 0:
+#      alert(f"**Error getting MACC data - {em}")
+#      return
+ #   else:
       alert("Printing x,y to app log")
      # print(x)
      # print(y)
-      self.plot_1.data[
-      go.scatter( x=y, y=y,
-                 title="Marginal Abatement Cost Curve")]
+      self.image_1.source = anvil.server.call('make_MACC_plot')
       pass
       

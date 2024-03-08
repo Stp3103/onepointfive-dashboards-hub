@@ -1040,7 +1040,6 @@ def call_get_MACC_data(entity_number):
 
   return ret
   
-  
 def get_MACC_data(entity_number):
   # Gets the data required to plot a MACC chart from project_results table for entity specified by entity_number.
   
@@ -1076,3 +1075,39 @@ def get_MACC_data(entity_number):
     ret_mess['em']  = msg1
     return ret_mess
   return ret_mess  
+
+@anvil.server.callable
+def make_MACC_plot():
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  fig, ax = plt.subplots()
+
+  years = df['year']
+  x = np.arange(len(years))
+
+  # Must manually calculate the x-positions of the bars
+  width = 0.2
+  ax.bar(x - 3*width/2, df['conservative'], width, label='Conservative', color='#0343df')
+  ax.bar(x - width/2, df['labour'], width, label='Labour', color='#e50000')
+  ax.bar(x + width/2, df['liberal'], width, label='Liberal', color='#ffff14')
+  ax.bar(x + 3*width/2, df['others'], width, label='Others', color='#929591')
+
+  # Notice that features like labels and titles are added in separate steps
+  ax.set_ylabel('Seats')
+  ax.set_title('UK election results')
+
+  ax.set_xticks(x)    # This ensures we have one tick per year, otherwise we get fewer
+  ax.set_xticklabels(years.astype(str).values, rotation='vertical')
+
+  ax.legend(loc="lower right")
+
+  # Here's the extra line plot
+  ax.plot(x, df['conservative'] - df['labour'], label='Conservative lead over Labour', color='black', linestyle='dashed')
+  ax.grid(color='#cccccc')
+  ax.set_axisbelow(True)
+  ax.set_ylim([-500, 500])
+  
+  fig.tight_layout(pad=1)
+  
+  return anvil.mpl_util.plot_image()
