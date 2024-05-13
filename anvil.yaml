@@ -25,7 +25,7 @@ services:
   client_config: {}
   server_config: {}
 startup: {type: module, module: Login_form.Module1}
-package_name: OnePointFive_Estate_HUB
+package_name: OnePointFive_Dashboards_HUB
 allow_embedding: false
 name: OnePointFive_Dashboards
 runtime_options:
