@@ -124,6 +124,26 @@ def close_database_connection():
   
   return
   
+    
+@anvil.server.callable    
+def get_upload_log(published,task_id):
+  # Returns the upload log from the task_logs table based on the background task ID
+  # Open database connection
+  conn                = initialise_database_connection(published)
+  print('In get_upload_log_2_db')
+  with conn.cursor() as cursor:
+
+    gsql = f"SELECT up_log FROM task_logs WHERE task_id = \'{task_id}\';"
+    print('gsql')
+    print(gsql)
+    cursor.execute(gsql)
+    t_log   = cursor.fetchall() # A list of tuples 
+    keys    = ("up_log")
+    ld      = [dict(zip(keys, values)) for values in t_log] # Convert tuples to dicts
+    dlog    = ld[0]
+    log     = dlog['u']
+    return log
+
 @anvil.server.callable
 def get_entity_number_v002(entity_code):
   print('=================In get_entity_number_v002 - dbconnection:')

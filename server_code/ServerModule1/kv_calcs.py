@@ -18,7 +18,7 @@ import pyodbc
 import sqlalchemy as salch
 import urllib.parse
 
-from ServerModule1 import initialise_database_connection 
+#from ServerModule1 import initialise_database_connection 
 
 from datetime import datetime, timedelta
 from datetime import date
@@ -1164,7 +1164,7 @@ def remove_spurious_projects(conn, dfin, project_types):
   
 def validate_non_solar_projects_details_upload(conn, entity, entity_number, df):
   print('At top validate non solar projects details_upload')
-  import kv_calcs as kc
+  #import kv_calcs as kc
   import datetime
   # Validates non_solar project details dataframe (df) for entity with entity_number read from project details upload file. Conn is the connection object to the Decarb database.
   try:
@@ -1297,7 +1297,7 @@ def validate_non_solar_projects_details_upload(conn, entity, entity_number, df):
 
 def validate_solar_pv_projects_details_upload(conn, entity, entity_number, df):
   print('At top validate_solar_pv_projects details_upload')
-  import kv_calcs as kc
+  #import kv_calcs as kc
   import datetime
   # Validates solar pv project details dataframe (df) for entity with entity_number read from project details upload file. Conn is the connection object to the Decarb database.
   try:
@@ -1474,7 +1474,7 @@ def validate_solar_pv_projects_details_upload(conn, entity, entity_number, df):
   
 def validate_solar_thermal_projects_details_upload(conn, entity, entity_number, df):
   print('At top validate_solar_thermal_projects details_upload')
-  import kv_calcs as kc
+  #import kv_calcs as kc
   import datetime
   # Validates solar thermal project details dataframe (df) for entity with entity_number read from project details upload file. Conn is the connection object to the Decarb database.
   try:
@@ -1797,7 +1797,7 @@ def calc_building_co2_emissions(dbconnect, entity_number, uprn):
 def calc_controlled_estate_summary(dbconnect, entity_number):
   
   # Calculates results summarising all controlled buildings within an estate and writes these to the controlled_estate_summary table
-  import kv_calcs as kc
+  #import kv_calcs as kc
   print('In calc_controlled_estate_summary')
 
   try:
@@ -5782,42 +5782,7 @@ def write_upload_log_2_db(conn, entity_number, user_email, dt_str, task_id, task
     print(f"Exception in write_upload_log_2_db \n {msg}")
     return
 
-@anvil.server.callable  
 
-def get_upload_log(task_id):
-  
-  # Returns the upload log for a background task identified by its task_id
-
-  sqlrb = f"SELECT up_log FROM task_logs WHERE task_id = \'{task_id}\'"
-  
-  cursor.execute(sqlrb)
-  t_output_bt          = cursor.fetchall()
-  keys                 = ( "up_log" )
-  output_bt            =  [dict(zip(keys, values)) for values in t_output_bt] 
-  print (f"\n ================Readback of up_log \n ")
-  dl                   = output_bt[0]
-  up_log               = dl['u']
-  print(dl['u'])
-  return up_log
-    
-@anvil.server.callable    
-def get_upload_log(published,task_id):
-  # Returns the upload log from the task_logs table based on the background task ID
-  # Open database connection
-  conn                = initialise_database_connection(published)
-  print('In get_upload_log_2_db')
-  with conn.cursor() as cursor:
-
-    gsql = f"SELECT up_log FROM task_logs WHERE task_id = \'{task_id}\';"
-    print('gsql')
-    print(gsql)
-    cursor.execute(gsql)
-    t_log   = cursor.fetchall() # A list of tuples 
-    keys    = ("up_log")
-    ld      = [dict(zip(keys, values)) for values in t_log] # Convert tuples to dicts
-    dlog    = ld[0]
-    log     = dlog['u']
-    return log
 @anvil.server.callable   
 def log_str_types_in_numeric_cols(df_in, column_list):
     # Used to return a formatted log of the location of occurences of values of type str appearing in the numeric columns of a dataframe. 
