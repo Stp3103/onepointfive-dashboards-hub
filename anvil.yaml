@@ -114,8 +114,8 @@ db_schema:
     - name: confirmed_email
       admin_ui: {width: 200}
       type: bool
-  users:
-    title: Users
+  users_new_old:
+    title: Users new old
     client: none
     server: full
     columns:
@@ -149,6 +149,11 @@ db_schema:
     - name: remembered_logins
       admin_ui: {width: 200}
       type: simpleObject
+  users:
+    client: none
+    server: full
+    columns: []
+    title: Table 4
 secrets:
   dev_database_name:
     value: {? '' : /OmZY4TXX0PLjHqdViaHDd5nPGaanAWzlgRpbH+rF+UA2vjEffcohYw0svh/HF7pDjXXYTThkKn3rPWrsdCCf/Bs3V2PVotVHwGLIC0TcfxtyeCeCry7+jqQoDe2IQL3MCVQq6pujET1enMp9KzijCZlCj70d2c=}
