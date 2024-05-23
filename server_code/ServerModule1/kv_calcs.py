@@ -42,7 +42,7 @@ from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhites
 import sys, traceback
 import math
 
-import Solar_factors as sf
+from . import Solar_factors as sf
 
 import cryptography
 from cryptography.fernet import Fernet
