@@ -83,9 +83,9 @@ components:
       background: ''
       bold: false
       border: ''
-      font: ''
+      font: Red Hat Display
       font_size: null
-      foreground: theme:Primary 500
+      foreground: theme:Gray 600
       icon: ''
       icon_align: top
       italic: false

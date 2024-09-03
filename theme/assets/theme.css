@@ -102,10 +102,10 @@ body {
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 300 to 900
 
-.red-hat-display-<uniquifier> {
+.red-hat-display-<Red Hat Display> {
   font-family: "Red Hat Display", system-ui;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: <600>;
   font-style: normal;
 }
 }
