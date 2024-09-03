@@ -102,10 +102,10 @@ body {
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 300 to 900
 
-  font-family: Red Hat display, system-ui;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+  font-family: RedHatDisplay; 
+  font-size: 14px;
+  line-height: 1.4286;
+  background-color: #fafafa;
 }
 
 @media print {
