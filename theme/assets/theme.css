@@ -99,10 +99,15 @@ a>.anvil-component-icon.right_edge-icon,
 
 /* Typography */
 body {
-  font-family: Roboto, Noto, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.4286;
-  background-color: #fafafa;
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 900
+
+.red-hat-display-<uniquifier> {
+  font-family: "Red Hat Display", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 }
 
 @media print {

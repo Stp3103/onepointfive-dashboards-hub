@@ -128,7 +128,11 @@ dependencies:
   version: {dev: false}
 metadata: {description: Dashboards for decarbonisation target entities, logo_img: 'asset:OPF diamond from website 20240213-logo.jpeg', title: Dashboards}
 name: OnePointFive_Dashboards
-native_deps: {head_html: ''}
+native_deps:
+  head_html: |
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 package_name: OnePointFive_Dashboards_HUB
 renamed: true
 runtime_options:
