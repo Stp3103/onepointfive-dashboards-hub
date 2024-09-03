@@ -102,9 +102,9 @@ body {
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 300 to 900
 
-  font-family: "Red Hat Display", system-ui;
+  font-family: Red Hat display, system-ui;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 600;
   font-style: normal;
 }
 
