@@ -1,342 +1,338 @@
-container:
-  type: ColumnPanel
-  properties: {foreground: '', background: ''}
 components:
-- name: tabs_1
-  properties:
-    tab_titles: [Add Client, Delete Client, Amend Client, Add User, Delete User, Amend User]
-    foreground: theme:Gray 900
-    active_background: theme:Gray 300
-  type: form:C6ZZPAPN4YYF5NVJ:Tabs
+- event_bindings: {hide: tabs_1_hide, tab_click: tabs_1_tab_click}
   layout_properties: {grid_position: 'PHCICA,TWTGXJ'}
-  event_bindings: {hide: tabs_1_hide, tab_click: tabs_1_tab_click}
-- name: Amend_user_panel
-  properties: {spacing_above: none, spacing_below: none, col_spacing: none, role: card,
-    visible: false}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'HGFAFU,WNYGCE'}
-  components:
-  - name: spacer_4
+  name: tabs_1
+  properties:
+    active_background: theme:Gray 300
+    foreground: theme:Gray 900
+    tab_titles: [Add Client, Delete Client, Amend Client, Add User, Delete User, Amend User]
+  type: form:C6ZZPAPN4YYF5NVJ:Tabs
+- components:
+  - layout_properties: {grid_position: 'LYVSES,NDXPSX'}
+    name: spacer_4
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'LYVSES,NDXPSX'}
-  - name: text_box_3
+  - layout_properties: {grid_position: 'LYVSES,TZGWSC'}
+    name: text_box_3
     properties: {}
     type: TextBox
-    layout_properties: {grid_position: 'LYVSES,TZGWSC'}
-  - name: button_3
-    properties: {text: SEARCH, icon: 'fa:search', background: 'theme:Primary 700',
-      foreground: 'theme:White'}
+  - layout_properties: {grid_position: 'LYVSES,OQKSLB'}
+    name: button_3
+    properties: {background: 'theme:Primary 700', foreground: 'theme:White', icon: 'fa:search', text: SEARCH}
     type: Button
-    layout_properties: {grid_position: 'LYVSES,OQKSLB'}
-  - name: spacer_2
+  - layout_properties: {grid_position: 'LYVSES,ZWBAWB'}
+    name: spacer_2
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'LYVSES,ZWBAWB'}
-  - name: spacer_5
+  - layout_properties: {grid_position: 'CJSPFW,EKFYMU'}
+    name: spacer_5
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'CJSPFW,EKFYMU'}
-  - name: drop_down_5
-    properties: {placeholder: 'Select a user from the search:', include_placeholder: true}
+  - layout_properties: {grid_position: 'CJSPFW,HDJHEC'}
+    name: drop_down_5
+    properties: {include_placeholder: true, placeholder: 'Select a user from the search:'}
     type: DropDown
-    layout_properties: {grid_position: 'CJSPFW,HDJHEC'}
-  - name: spacer_3
+  - layout_properties: {grid_position: 'CJSPFW,LYVSKT'}
+    name: spacer_3
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'CJSPFW,LYVSKT'}
-  - name: label_1_copy
-    properties: {text: 'User  Name:', align: center, spacing_above: medium, spacing_below: large}
+  - layout_properties: {grid_position: 'AORYER,AZGQFA'}
+    name: label_1_copy
+    properties: {align: center, spacing_above: medium, spacing_below: large, text: 'User  Name:'}
     type: Label
-    layout_properties: {grid_position: 'AORYER,AZGQFA'}
-  - name: text_box_1_copy
+  - layout_properties: {grid_position: 'AORYER,RINXBG'}
+    name: text_box_1_copy
     properties: {placeholder: ''}
     type: TextBox
-    layout_properties: {grid_position: 'AORYER,RINXBG'}
-  - name: spacer_1
+  - layout_properties: {grid_position: 'AORYER,GGGDCH'}
+    name: spacer_1
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'AORYER,GGGDCH'}
-  - name: label_3_copy
-    properties: {text: 'Enabled:', align: center, spacing_above: large}
+  - layout_properties: {grid_position: 'LPNTNR,JJXCKC'}
+    name: label_3_copy
+    properties: {align: center, spacing_above: large, text: 'Enabled:'}
     type: Label
-    layout_properties: {grid_position: 'LPNTNR,JJXCKC'}
-  - name: drop_down_1_copy
+  - layout_properties: {grid_position: 'LPNTNR,XXDCLH'}
+    name: drop_down_1_copy
     properties:
       include_placeholder: true
-      placeholder: ''
       items: [Disabled, Enabled]
+      placeholder: ''
     type: DropDown
-    layout_properties: {grid_position: 'LPNTNR,XXDCLH'}
-  - name: spacer_7
+  - layout_properties: {grid_position: 'LPNTNR,YBUDOY'}
+    name: spacer_7
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'LPNTNR,YBUDOY'}
-  - name: label_4_copy
-    properties: {text: 'User type:', align: center, spacing_above: large}
+  - layout_properties: {grid_position: 'QCTWSD,RBDJYZ'}
+    name: label_4_copy
+    properties: {align: center, spacing_above: large, text: 'User type:'}
     type: Label
-    layout_properties: {grid_position: 'QCTWSD,RBDJYZ'}
-  - name: drop_down_2_copy
+  - layout_properties: {grid_position: 'QCTWSD,RKLTMJ'}
+    name: drop_down_2_copy
     properties:
       include_placeholder: true
-      placeholder: ''
       items: [Backend only, Frontend only, Backend and Frontend]
+      placeholder: ''
     type: DropDown
-    layout_properties: {grid_position: 'QCTWSD,RKLTMJ'}
-  - name: spacer_8
+  - layout_properties: {grid_position: 'QCTWSD,VQJMBK'}
+    name: spacer_8
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'QCTWSD,VQJMBK'}
-  - name: label_5_copy
-    properties: {text: 'Admin:', align: center, spacing_above: large}
+  - layout_properties: {grid_position: 'TQVTBA,ROKVUT'}
+    name: label_5_copy
+    properties: {align: center, spacing_above: large, text: 'Admin:'}
     type: Label
-    layout_properties: {grid_position: 'TQVTBA,ROKVUT'}
-  - name: drop_down_3_copy
+  - layout_properties: {grid_position: 'TQVTBA,FFXEGW'}
+    name: drop_down_3_copy
     properties:
       include_placeholder: true
-      placeholder: ''
       items: ['No', 'Yes']
+      placeholder: ''
     type: DropDown
-    layout_properties: {grid_position: 'TQVTBA,FFXEGW'}
-  - name: spacer_9
+  - layout_properties: {grid_position: 'TQVTBA,DEYYDR'}
+    name: spacer_9
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'TQVTBA,DEYYDR'}
-  - name: label_6_copy
-    properties: {text: 'Organisation type:', align: center, spacing_above: large}
+  - layout_properties: {grid_position: 'FTQMRB,COPMMJ'}
+    name: label_6_copy
+    properties: {align: center, spacing_above: large, text: 'Organisation type:'}
     type: Label
-    layout_properties: {grid_position: 'FTQMRB,COPMMJ'}
-  - name: drop_down_4_copy
+  - layout_properties: {grid_position: 'FTQMRB,KRXJPH'}
+    name: drop_down_4_copy
     properties:
       include_placeholder: true
-      placeholder: ''
       items: [Partner, Client]
+      placeholder: ''
     type: DropDown
-    layout_properties: {grid_position: 'FTQMRB,KRXJPH'}
-  - name: spacer_10
+  - layout_properties: {grid_position: 'FTQMRB,CBUFAU'}
+    name: spacer_10
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'FTQMRB,CBUFAU'}
-- name: column_panel_1
-  properties: {}
+  layout_properties: {grid_position: 'HGFAFU,WNYGCE'}
+  name: Amend_user_panel
+  properties: {col_spacing: none, role: card, spacing_above: none, spacing_below: none, visible: false}
   type: ColumnPanel
-  layout_properties: {grid_position: 'GFWAAI,NXESDP'}
-  components:
-  - name: Add_user_panel
-    properties: {spacing_above: none, spacing_below: none, col_spacing: none, role: card,
-      visible: true, background: 'theme:White'}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'UOFDDA,ZTEFOK'}
-    components:
-    - name: label_1
-      properties: {text: 'User  Name:', align: center, spacing_above: large}
+- components:
+  - components:
+    - layout_properties: {grid_position: 'AORYER,AZGQFA'}
+      name: label_1
+      properties: {align: center, spacing_above: large, text: 'User  Name:'}
       type: Label
-      layout_properties: {grid_position: 'AORYER,AZGQFA'}
-    - name: text_box_1
+    - layout_properties: {grid_position: 'AORYER,RINXBG'}
+      name: text_box_1
       properties: {placeholder: Enter user's real name here}
       type: TextBox
-      layout_properties: {grid_position: 'AORYER,RINXBG'}
-    - name: spacer_11
+    - layout_properties: {grid_position: 'AORYER,SYXXOX'}
+      name: spacer_11
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'AORYER,SYXXOX'}
-    - name: label_2
-      properties: {text: 'Email address:', align: center, spacing_above: large}
+    - layout_properties: {grid_position: 'DCRLUY,ARPOCD'}
+      name: label_2
+      properties: {align: center, spacing_above: large, text: 'Email address:'}
       type: Label
-      layout_properties: {grid_position: 'DCRLUY,ARPOCD'}
-    - name: text_box_2
+    - layout_properties: {grid_position: 'DCRLUY,YDDIGL'}
+      name: text_box_2
       properties: {placeholder: Enter a valid email address here.}
       type: TextBox
-      layout_properties: {grid_position: 'DCRLUY,YDDIGL'}
-    - name: spacer_12
+    - layout_properties: {grid_position: 'DCRLUY,OLTCTZ'}
+      name: spacer_12
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'DCRLUY,OLTCTZ'}
-    - name: label_3
-      properties: {text: 'Enabled:', align: center, spacing_above: large}
+    - layout_properties: {grid_position: 'LPNTNR,JJXCKC'}
+      name: label_3
+      properties: {align: center, spacing_above: large, text: 'Enabled:'}
       type: Label
-      layout_properties: {grid_position: 'LPNTNR,JJXCKC'}
-    - name: drop_down_1
+    - layout_properties: {grid_position: 'LPNTNR,XXDCLH'}
+      name: drop_down_1
       properties:
         include_placeholder: true
-        placeholder: 'Select an option:'
         items: [Disabled, Enabled]
+        placeholder: 'Select an option:'
       type: DropDown
-      layout_properties: {grid_position: 'LPNTNR,XXDCLH'}
-    - name: spacer_13
+    - layout_properties: {grid_position: 'LPNTNR,NFETUP'}
+      name: spacer_13
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'LPNTNR,NFETUP'}
-    - name: label_4
-      properties: {text: 'User type:', align: center, spacing_above: large}
+    - layout_properties: {grid_position: 'QCTWSD,RBDJYZ'}
+      name: label_4
+      properties: {align: center, spacing_above: large, text: 'User type:'}
       type: Label
-      layout_properties: {grid_position: 'QCTWSD,RBDJYZ'}
-    - name: drop_down_2
+    - layout_properties: {grid_position: 'QCTWSD,RKLTMJ'}
+      name: drop_down_2
       properties:
         include_placeholder: true
-        placeholder: 'Select an option:'
         items: [Backend only, Frontend only, Backend and Frontend]
+        placeholder: 'Select an option:'
       type: DropDown
-      layout_properties: {grid_position: 'QCTWSD,RKLTMJ'}
-    - name: spacer_14
+    - layout_properties: {grid_position: 'QCTWSD,ZKBPPC'}
+      name: spacer_14
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'QCTWSD,ZKBPPC'}
-    - name: label_5
-      properties: {text: 'Admin:', align: center, spacing_above: large}
+    - layout_properties: {grid_position: 'TQVTBA,ROKVUT'}
+      name: label_5
+      properties: {align: center, spacing_above: large, text: 'Admin:'}
       type: Label
-      layout_properties: {grid_position: 'TQVTBA,ROKVUT'}
-    - name: drop_down_3
+    - layout_properties: {grid_position: 'TQVTBA,FFXEGW'}
+      name: drop_down_3
       properties:
         include_placeholder: true
-        placeholder: 'Select an option:'
         items: ['No', 'Yes']
+        placeholder: 'Select an option:'
       type: DropDown
-      layout_properties: {grid_position: 'TQVTBA,FFXEGW'}
-    - name: spacer_15
+    - layout_properties: {grid_position: 'TQVTBA,NQAHUF'}
+      name: spacer_15
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'TQVTBA,NQAHUF'}
-    - name: label_6
-      properties: {text: 'Organisation type:', align: center, spacing_above: large}
+    - layout_properties: {grid_position: 'FTQMRB,COPMMJ CMEAYV,PPBYRF'}
+      name: label_6
+      properties: {align: center, spacing_above: large, text: 'Organisation type:'}
       type: Label
-      layout_properties: {grid_position: 'FTQMRB,COPMMJ CMEAYV,PPBYRF'}
-    - name: drop_down_4
+    - layout_properties: {grid_position: 'FTQMRB,KRXJPH'}
+      name: drop_down_4
       properties:
         include_placeholder: true
-        placeholder: 'Select an option:'
         items: [Partner, Client]
+        placeholder: 'Select an option:'
       type: DropDown
-      layout_properties: {grid_position: 'FTQMRB,KRXJPH'}
-    - name: spacer_16
+    - layout_properties: {grid_position: 'FTQMRB,VTSGCQ'}
+      name: spacer_16
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'FTQMRB,VTSGCQ'}
-- name: Delete_user_panel
-  properties: {spacing_above: none, spacing_below: none, col_spacing: none, role: card,
-    visible: false}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'ZFGFWX,ZMUIIQ'}
-  components:
-  - name: spacer_4_copy
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'LYVSES,NDXPSX'}
-  - name: text_box_3_copy
-    properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'LYVSES,TZGWSC'}
-  - name: button_3_copy
-    properties: {text: SEARCH, icon: 'fa:search', background: 'theme:Primary 700',
-      foreground: 'theme:White'}
-    type: Button
-    layout_properties: {grid_position: 'LYVSES,OQKSLB'}
-  - name: spacer_2_copy
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'LYVSES,ZWBAWB'}
-  - name: spacer_5_copy
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'CJSPFW,EKFYMU'}
-  - name: drop_down_5_copy
-    properties: {placeholder: 'Select a user from the search:', include_placeholder: true}
-    type: DropDown
-    layout_properties: {grid_position: 'CJSPFW,HDJHEC'}
-  - name: spacer_3_copy
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'CJSPFW,LYVSKT'}
-  - name: label_1_copy_copy
-    properties: {text: 'User  Name:', align: center, spacing_above: medium, spacing_below: large}
-    type: Label
-    layout_properties: {grid_position: 'AORYER,AZGQFA'}
-  - name: text_box_1_copy_copy
-    properties: {placeholder: ''}
-    type: TextBox
-    layout_properties: {grid_position: 'AORYER,RINXBG'}
-  - name: spacer_1_copy
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'AORYER,GGGDCH'}
-  - name: delete_button
-    properties: {text: Delete, visible: true, background: '#FF0000', foreground: 'theme:White'}
-    type: Button
-    layout_properties: {grid_position: 'FTQMRB,XULWAS', row_background: ''}
-    data_bindings:
-    - {property: font, code: '', writeback: false}
-- name: Add_client_panel
-  properties: {visible: false}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'MLZEAV,RHMJXM'}
-  components:
-  - name: label_1_copy_2
-    properties: {text: Client name, align: center, spacing_above: large}
-    type: Label
-    layout_properties: {grid_position: 'RDUVOO,VEDTSP'}
-  - name: text_box_1_copy_2
-    properties: {placeholder: Enter client's name here}
-    type: TextBox
-    layout_properties: {grid_position: 'RDUVOO,JQMSSV'}
-  - name: spacer_6
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'RDUVOO,JRQPUB'}
-  - name: Add_client_panel_copy
-    properties: {}
+    layout_properties: {grid_position: 'UOFDDA,ZTEFOK'}
+    name: Add_user_panel
+    properties: {background: 'theme:White', col_spacing: none, role: card, spacing_above: none, spacing_below: none, visible: true}
     type: ColumnPanel
-    layout_properties: {grid_position: 'ADGNFZ,MFSHRS'}
-    components:
-    - name: label_1_copy_2_copy_2
-      properties: {text: Client ID, align: center, spacing_above: large}
-      type: Label
-      layout_properties: {grid_position: 'RDUVOO,VEDTSP'}
-    - name: text_box_1_copy_2_copy
-      properties: {placeholder: Enter unique ID}
-      type: TextBox
-      layout_properties: {grid_position: 'RDUVOO,JQMSSV'}
-    - name: spacer_6_copy
-      properties: {height: 32}
-      type: Spacer
-      layout_properties: {grid_position: 'RDUVOO,JRQPUB'}
-- name: add_client_panel
+  layout_properties: {grid_position: 'GFWAAI,NXESDP'}
+  name: column_panel_1
   properties: {}
   type: ColumnPanel
-  layout_properties: {grid_position: 'PWNQJE,AOMNGP'}
-  components:
-  - name: Delete_client_panel
-    properties: {visible: false}
+- components:
+  - layout_properties: {grid_position: 'LYVSES,NDXPSX'}
+    name: spacer_4_copy
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'LYVSES,TZGWSC'}
+    name: text_box_3_copy
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'LYVSES,OQKSLB'}
+    name: button_3_copy
+    properties: {background: 'theme:Primary 700', foreground: 'theme:White', icon: 'fa:search', text: SEARCH}
+    type: Button
+  - layout_properties: {grid_position: 'LYVSES,ZWBAWB'}
+    name: spacer_2_copy
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'CJSPFW,EKFYMU'}
+    name: spacer_5_copy
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'CJSPFW,HDJHEC'}
+    name: drop_down_5_copy
+    properties: {include_placeholder: true, placeholder: 'Select a user from the search:'}
+    type: DropDown
+  - layout_properties: {grid_position: 'CJSPFW,LYVSKT'}
+    name: spacer_3_copy
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'AORYER,AZGQFA'}
+    name: label_1_copy_copy
+    properties: {align: center, spacing_above: medium, spacing_below: large, text: 'User  Name:'}
+    type: Label
+  - layout_properties: {grid_position: 'AORYER,RINXBG'}
+    name: text_box_1_copy_copy
+    properties: {placeholder: ''}
+    type: TextBox
+  - layout_properties: {grid_position: 'AORYER,GGGDCH'}
+    name: spacer_1_copy
+    properties: {height: 32}
+    type: Spacer
+  - data_bindings:
+    - {code: '', property: font, writeback: false}
+    layout_properties: {grid_position: 'FTQMRB,XULWAS', row_background: ''}
+    name: delete_button
+    properties: {background: '#FF0000', foreground: 'theme:White', text: Delete, visible: true}
+    type: Button
+  layout_properties: {grid_position: 'ZFGFWX,ZMUIIQ'}
+  name: Delete_user_panel
+  properties: {col_spacing: none, role: card, spacing_above: none, spacing_below: none, visible: false}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'RDUVOO,VEDTSP'}
+    name: label_1_copy_2
+    properties: {align: center, spacing_above: large, text: Client name}
+    type: Label
+  - layout_properties: {grid_position: 'RDUVOO,JQMSSV'}
+    name: text_box_1_copy_2
+    properties: {placeholder: Enter client's name here}
+    type: TextBox
+  - layout_properties: {grid_position: 'RDUVOO,JRQPUB'}
+    name: spacer_6
+    properties: {height: 32}
+    type: Spacer
+  - components:
+    - layout_properties: {grid_position: 'RDUVOO,VEDTSP'}
+      name: label_1_copy_2_copy_2
+      properties: {align: center, spacing_above: large, text: Client ID}
+      type: Label
+    - layout_properties: {grid_position: 'RDUVOO,JQMSSV'}
+      name: text_box_1_copy_2_copy
+      properties: {placeholder: Enter unique ID}
+      type: TextBox
+    - layout_properties: {grid_position: 'RDUVOO,JRQPUB'}
+      name: spacer_6_copy
+      properties: {height: 32}
+      type: Spacer
+    layout_properties: {grid_position: 'ADGNFZ,MFSHRS'}
+    name: Add_client_panel_copy
+    properties: {}
     type: ColumnPanel
-    layout_properties: {grid_position: 'UNTPXE,VFLQQA'}
-    components:
-    - name: data_grid_1
-      properties:
-        columns:
-        - {id: JKSDUP, title: Column 1, data_key: column_1}
-        - {id: VJQQOR, title: Column 2, data_key: column_2}
-        - {id: OJLQEN, title: Column 3, data_key: column_3}
-        visible: false
-      type: DataGrid
-      components:
+  layout_properties: {grid_position: 'MLZEAV,RHMJXM'}
+  name: Add_client_panel
+  properties: {visible: false}
+  type: ColumnPanel
+- components:
+  - components:
+    - components:
       - name: repeating_panel_1
         properties: {item_template: Administration.RowTemplate1}
         type: RepeatingPanel
       layout_properties: {grid_position: 'RQLPSO,YTSXSP'}
-    - name: button_1
-      properties: {text: DELETE, background: '#Ff0000', foreground: 'theme:White',
-        visible: false}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: column_1, id: JKSDUP, title: Column 1}
+        - {data_key: column_2, id: VJQQOR, title: Column 2}
+        - {data_key: column_3, id: OJLQEN, title: Column 3}
+        visible: false
+      type: DataGrid
+    - layout_properties: {grid_position: 'FKECIK,ZWCRJN'}
+      name: button_1
+      properties: {background: '#Ff0000', foreground: 'theme:White', text: DELETE, visible: false}
       type: Button
-      layout_properties: {grid_position: 'FKECIK,ZWCRJN'}
-- name: Save_button
-  properties: {text: Save, background: 'theme:Secondary 500', foreground: 'theme:White'}
-  type: Button
+    layout_properties: {grid_position: 'UNTPXE,VFLQQA'}
+    name: Delete_client_panel
+    properties: {visible: false}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'PWNQJE,AOMNGP'}
+  name: add_client_panel
+  properties: {}
+  type: ColumnPanel
+- event_bindings: {click: self.save_button_click}
   layout_properties: {grid_position: 'WGKXAY,HWZVBD'}
-  event_bindings: {click: self.save_button_click}
-- name: Cancel_button
-  properties: {text: 'Cancel
-
-      ', background: 'theme:Logo blue', foreground: 'theme:White'}
+  name: Save_button
+  properties: {background: 'theme:Secondary 500', foreground: 'theme:White', text: Save}
   type: Button
+- event_bindings: {click: cancel_button_click}
   layout_properties: {grid_position: 'JRSMTR,DWLQVH'}
-  event_bindings: {click: cancel_button_click}
+  name: Cancel_button
+  properties:
+    background: theme:Logo blue
+    foreground: theme:White
+    text: |
+      Cancel
+  type: Button
+container:
+  properties: {background: '', foreground: ''}
+  type: ColumnPanel
 is_package: true

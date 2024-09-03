@@ -1,300 +1,227 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
-  event_bindings: {}
 components:
-- type: ColumnPanel
-  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
-    spacing_below: small, background: ''}
-  name: navigation_1
-  layout_properties: {slot: left-nav}
-  components:
-  - name: selected_partner
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        500', visible: true, text: '', font_size: 14, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    type: Label
+- components:
+  - data_bindings: []
     layout_properties: {grid_position: 'RIKSRE,EQAZZQ'}
-    data_bindings: []
-  - name: selected_client
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        500', visible: true, text: '', font_size: 14, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
+    name: selected_partner
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: 14, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
     type: Label
+  - data_bindings: []
     layout_properties: {grid_position: 'DHTHBI,JHOBJG'}
-    data_bindings: []
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        500', visible: true, text: '', font_size: 14, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: selected_entity
+    name: selected_client
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: 14, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+    type: Label
+  - data_bindings: []
     layout_properties: {grid_position: 'XQSBIZ,GHUAIO'}
-    data_bindings: []
-  - name: spacer_4
+    name: selected_entity
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: 14, foreground: 'theme:Secondary 500', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'XAOHCX,NZDCUE'}
+    name: spacer_4
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'XAOHCX,NZDCUE'}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: Home, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: none, icon_align: left, col_widths: '{}', spacing_below: none,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: home_link
-    layout_properties: {grid_position: 'IZTCCM,ZQTPZF'}
-    event_bindings: {click: menu_home_click}
-    components: []
+  - components: []
     data_bindings: []
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: Change password, font_size: null, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: change_password_link
-    layout_properties: {grid_position: 'QMTAHT,ZWIVPR'}
+    event_bindings: {click: menu_home_click}
+    layout_properties: {grid_position: 'IZTCCM,ZQTPZF'}
+    name: home_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: none, spacing_below: none, text: Home, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - components: []
     event_bindings: {click: menu_change_password_click}
-    components: []
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '        Get data capture forms', font_size: null, wrap_on: mobile,
-      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: get_data_capture_forms_link
-    layout_properties: {grid_position: 'XFUUHS,DMQPYI'}
-    components: []
+    layout_properties: {grid_position: 'QMTAHT,ZWIVPR'}
+    name: change_password_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Change password, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - components: []
     event_bindings: {click: menu_get_data_capture_forms_click}
-  - name: menu_macc_link
+    layout_properties: {grid_position: 'XFUUHS,DMQPYI'}
+    name: get_data_capture_forms_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '        Get data capture forms', tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - event_bindings: {click: menu_MACC_click}
+    layout_properties: {grid_position: 'JMCMCT,GFAZEA'}
+    name: menu_macc_link
     properties: {text: '        MACC'}
     type: Link
-    layout_properties: {grid_position: 'JMCMCT,GFAZEA'}
-    event_bindings: {click: menu_MACC_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '        Upload data', font_size: null, wrap_on: mobile,
-      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: upload_data_link
-    layout_properties: {grid_position: 'KYJZIA,SSVKJW', row_background: ''}
+  - components: []
     event_bindings: {click: menu_upload_data_click}
-    components: []
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '        Progress projects', font_size: null, wrap_on: mobile,
-      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
-    name: progress_projects_link
-    layout_properties: {grid_position: 'CBEIXD,ODJDHS'}
+    layout_properties: {grid_position: 'KYJZIA,SSVKJW', row_background: ''}
+    name: upload_data_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '        Upload data', tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - components: []
     event_bindings: {click: menu_progress_projects_click}
-    components: []
-  - name: view_job_logs_link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '        View job logs', font_size: null, wrap_on: mobile,
-      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    layout_properties: {grid_position: 'CBEIXD,ODJDHS'}
+    name: progress_projects_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '        Progress projects', tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
     type: Link
+  - event_bindings: {click: menu_view_job_logs_click}
     layout_properties: {grid_position: 'GHUVBS,IJUCAT'}
-    event_bindings: {click: menu_view_job_logs_click}
-  - name: reports_link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: '        Reports', font_size: null, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    name: view_job_logs_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '        View job logs', tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
     type: Link
+  - event_bindings: {click: menu_reports_click}
     layout_properties: {grid_position: 'PVYWBS,SSRUEI'}
-    event_bindings: {click: menu_reports_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: 'theme:Black',
-      visible: true, text: Logout, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '{}', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: logout_link
-    layout_properties: {grid_position: 'KGRFIQ,XPJKXG', slot: default}
+    name: reports_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '        Reports', tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - components: []
     event_bindings: {click: menu_logout_click}
-    components: []
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - type: Label
-    properties: {role: headline, align: left, tooltip: '', border: '', foreground: 'theme:Primary
-        500', visible: true, text: 'Welcome to the OnePointFive Estate Decarbonisation
-        Hub
-
-        ', font_size: null, font: '', spacing_above: small, icon_align: top, spacing_below: none,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
+    layout_properties: {grid_position: 'KGRFIQ,XPJKXG', slot: default}
+    name: logout_link
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '{}', font: '', font_size: null, foreground: 'theme:Black', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Logout, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: navigation_1
+  properties: {background: '', border: '', col_spacing: medium, col_widths: '{}', foreground: '', role: null, spacing_above: small, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'PZVRMC,CDOEES', slot: title}
     name: label_welcome
-    layout_properties: {slot: title, grid_position: 'PZVRMC,CDOEES'}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_3
-    layout_properties: {grid_position: 'OEOEYQ,DOZBKH'}
-  - name: text_select_a_partner
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: 'Partner:',
-      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: '', bold: true, underline: false}
-    type: TextBox
-    layout_properties: {grid_position: 'UBYBLZ,DHTMHU'}
-    event_bindings: {pressed_enter: text_box_3_pressed_enter}
-  - name: drop_down_partner
-    properties: {include_placeholder: true, placeholder: 'Select a Partner: -'}
-    type: DropDown
-    layout_properties: {grid_position: 'YDBOAO,XDFURF'}
-    data_bindings: []
-    event_bindings: {change: drop_down_partner_change}
-  - name: no_partner_selected_message
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        700', visible: true, text: 'No Partner selected ', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'EOBPHE,NIKXIX'}
-  - name: text_select_a_client
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: 'Client : -',
-      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: '', bold: true, underline: false}
-    type: TextBox
-    layout_properties: {grid_position: 'UDCPXC,VPTIGS'}
-    event_bindings: {pressed_enter: text_box_3_pressed_enter}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: 'Estate : -',
-      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: '', bold: true, underline: false}
-    name: text_select_an_entity
-    layout_properties: {grid_position: 'UDCPXC,XSHDEV'}
-    event_bindings: {pressed_enter: text_select_an_entity_pressed_enter}
-  - name: drop_down_client
-    properties: {include_placeholder: true, placeholder: 'Select a Client: -', background: 'theme:Gray
-        300'}
-    type: DropDown
-    layout_properties: {grid_position: 'HZVMNO,FVMIYP GLVKQB,OJJCSY'}
-    event_bindings: {change: drop_down_client_change}
-  - name: no_client_selected_message
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        700', visible: true, text: 'No Client selected ', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    type: Label
-    layout_properties: {grid_position: 'HZVMNO,FVMIYP GFDJAL,SAHBEJ'}
-  - type: DropDown
     properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: 'Select an Estate: -'
-      border: ''
-      enabled: true
-      foreground: ''
-      items: ['']
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: theme:Gray 300
+      align: left
+      background: ''
       bold: false
+      border: ''
+      font: ''
+      font_size: null
+      foreground: theme:Primary 500
+      icon: ''
+      icon_align: top
+      italic: false
+      role: headline
+      spacing_above: small
+      spacing_below: none
+      text: |
+        Welcome to the OnePointFive Estate Decarbonisation Hub
+      tooltip: ''
       underline: false
-      include_placeholder: true
-    name: drop_down_entity
-    layout_properties: {grid_position: 'HZVMNO,MLNJKQ VYMRNT,NJALOG'}
-    data_bindings: []
-    event_bindings: {change: drop_down_entity_change}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        700', visible: true, text: 'No estate selected ', font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: no_entity_selected_message
-    layout_properties: {grid_position: 'HZVMNO,MLNJKQ XVTXBD,EZWLJW'}
-  - type: TextBox
-    properties: {role: null, align: right, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: 'Programme
-        start date:', font_size: null, font: '', spacing_above: small, type: text,
-      spacing_below: small, italic: false, background: '', bold: false, underline: false}
-    name: text_box_4
-    layout_properties: {grid_position: 'WZTXUC,TKFUKM'}
-    event_bindings: {pressed_enter: text_box_4_pressed_enter}
-  - type: DatePicker
-    properties: {role: null, align: left, max_date: '2050-12-31', pick_time: false,
-      tooltip: Used for initial rough estimates of programme schedule.  Changing this does not affect delivery dates of approved projects.,
-      placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: null,
-      font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-      min_date: '2017-01-01', background: '', bold: false, underline: false, format: ''}
-    name: date_picker_1
-    layout_properties: {grid_position: 'WZTXUC,UGGHMM'}
-    event_bindings: {change: kv_programme_start_date_change}
-  - name: spacer_6
+      visible: true
+    type: Label
+  - layout_properties: {grid_position: 'OEOEYQ,DOZBKH'}
+    name: spacer_3
     properties: {height: 32}
     type: Spacer
-    layout_properties: {grid_position: 'WKFKNS,FVQNNW'}
-  - type: Label
-    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Secondary
-        700', visible: true, text: No start date specified, font_size: null, font: '',
-      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false, icon: ''}
-    name: no_start_date_specified
-    layout_properties: {grid_position: 'WKFKNS,JQRUYK'}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_2
-    layout_properties: {grid_position: 'PJIVGC,TUUXTG'}
-  - type: Spacer
-    properties: {height: 32}
-    name: spacer_5
-    layout_properties: {grid_position: 'PJIVGC,XEHZNJ'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: summary_stats_1
-    layout_properties: {grid_position: 'AKFEJJ,AUSKYU'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
-      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: summary_stats_2
-    layout_properties: {grid_position: 'DJULDZ,IAYSAR'}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: Select an option from the left-hand menu.,
-      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
-      italic: false, background: '', bold: false, underline: false}
-    name: text_box_1
-    layout_properties: {grid_position: 'ZYPMXS,NKRJCN'}
-    event_bindings: {pressed_enter: text_box_1_pressed_enter}
-  - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: 'Messages from
-        the OnePointFive Admin Team will appear below: -', font_size: null, font: '',
-      spacing_above: small, type: text, spacing_below: small, italic: false, background: '',
-      bold: false, underline: false}
-    name: text_box_2
-    layout_properties: {grid_position: 'BHMCDY,QPPWNJ'}
-  - type: TextArea
-    properties: {role: null, align: left, height: '', tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
-      auto_expand: true, font: '', spacing_above: small, spacing_below: small, italic: false,
-      background: '', bold: false, underline: false}
-    name: text_area_1
-    layout_properties: {grid_position: 'ZBEASE,KZMMIS'}
-  - name: Release
-    properties: {role: headline, font_size: 14, italic: false}
+  - event_bindings: {pressed_enter: text_box_3_pressed_enter}
+    layout_properties: {grid_position: 'UBYBLZ,DHTMHU'}
+    name: text_select_a_partner
+    properties: {align: left, background: '', bold: true, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Partner:', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - data_bindings: []
+    event_bindings: {change: drop_down_partner_change}
+    layout_properties: {grid_position: 'YDBOAO,XDFURF'}
+    name: drop_down_partner
+    properties: {include_placeholder: true, placeholder: 'Select a Partner: -'}
+    type: DropDown
+  - layout_properties: {grid_position: 'EOBPHE,NIKXIX'}
+    name: no_partner_selected_message
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:Secondary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'No Partner selected ', tooltip: '', underline: false, visible: true}
     type: Label
-    layout_properties: {grid_position: 'FLJGXK,VVMYTY'}
+  - event_bindings: {pressed_enter: text_box_3_pressed_enter}
+    layout_properties: {grid_position: 'UDCPXC,VPTIGS'}
+    name: text_select_a_client
+    properties: {align: left, background: '', bold: true, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Client : -', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - event_bindings: {pressed_enter: text_select_an_entity_pressed_enter}
+    layout_properties: {grid_position: 'UDCPXC,XSHDEV'}
+    name: text_select_an_entity
+    properties: {align: left, background: '', bold: true, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Estate : -', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - event_bindings: {change: drop_down_client_change}
+    layout_properties: {grid_position: 'HZVMNO,FVMIYP GLVKQB,OJJCSY'}
+    name: drop_down_client
+    properties: {background: 'theme:Gray 300', include_placeholder: true, placeholder: 'Select a Client: -'}
+    type: DropDown
+  - layout_properties: {grid_position: 'HZVMNO,FVMIYP GFDJAL,SAHBEJ'}
+    name: no_client_selected_message
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:Secondary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'No Client selected ', tooltip: '', underline: false, visible: true}
+    type: Label
+  - data_bindings: []
+    event_bindings: {change: drop_down_entity_change}
+    layout_properties: {grid_position: 'HZVMNO,MLNJKQ VYMRNT,NJALOG'}
+    name: drop_down_entity
+    properties:
+      align: full
+      background: theme:Gray 300
+      bold: false
+      border: ''
+      enabled: true
+      font: ''
+      font_size: null
+      foreground: ''
+      include_placeholder: true
+      italic: false
+      items: ['']
+      placeholder: 'Select an Estate: -'
+      role: null
+      spacing_above: small
+      spacing_below: small
+      tooltip: ''
+      underline: false
+      visible: true
+    type: DropDown
+  - layout_properties: {grid_position: 'HZVMNO,MLNJKQ XVTXBD,EZWLJW'}
+    name: no_entity_selected_message
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:Secondary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: 'No estate selected ', tooltip: '', underline: false, visible: true}
+    type: Label
+  - event_bindings: {pressed_enter: text_box_4_pressed_enter}
+    layout_properties: {grid_position: 'WZTXUC,TKFUKM'}
+    name: text_box_4
+    properties: {align: right, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Programme start date:', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - event_bindings: {change: kv_programme_start_date_change}
+    layout_properties: {grid_position: 'WZTXUC,UGGHMM'}
+    name: date_picker_1
+    properties: {align: left, background: '', bold: false, border: '', date: '', enabled: true, font: '', font_size: null, foreground: '', format: '', italic: false, max_date: '2050-12-31', min_date: '2017-01-01', pick_time: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, tooltip: Used for initial rough estimates of programme schedule.  Changing this does not affect delivery dates of approved projects., underline: false, visible: true}
+    type: DatePicker
+  - layout_properties: {grid_position: 'WKFKNS,FVQNNW'}
+    name: spacer_6
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'WKFKNS,JQRUYK'}
+    name: no_start_date_specified
+    properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: 'theme:Secondary 700', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: No start date specified, tooltip: '', underline: false, visible: true}
+    type: Label
+  - layout_properties: {grid_position: 'PJIVGC,TUUXTG'}
+    name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'PJIVGC,XEHZNJ'}
+    name: spacer_5
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'AKFEJJ,AUSKYU'}
+    name: summary_stats_1
+    properties: {align: left, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - layout_properties: {grid_position: 'DJULDZ,IAYSAR'}
+    name: summary_stats_2
+    properties: {align: left, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    layout_properties: {grid_position: 'ZYPMXS,NKRJCN'}
+    name: text_box_1
+    properties: {align: left, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: Select an option from the left-hand menu., tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - layout_properties: {grid_position: 'BHMCDY,QPPWNJ'}
+    name: text_box_2
+    properties: {align: left, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Messages from the OnePointFive Admin Team will appear below: -', tooltip: '', type: text, underline: false, visible: true}
+    type: TextBox
+  - layout_properties: {grid_position: 'ZBEASE,KZMMIS'}
+    name: text_area_1
+    properties: {align: left, auto_expand: true, background: '', bold: false, border: '', enabled: false, font: '', font_size: null, foreground: '', height: '', italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+    type: TextArea
+  - layout_properties: {grid_position: 'FLJGXK,VVMYTY'}
+    name: Release
+    properties: {font_size: 14, italic: false, role: headline}
+    type: Label
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+container:
+  event_bindings: {}
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
 custom_component: true
+is_package: true

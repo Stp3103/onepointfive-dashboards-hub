@@ -1,34 +1,30 @@
-container:
-  type: ColumnPanel
-  properties: {col_widths: '{}'}
 components:
-- type: Button
-  properties: {role: null, align: right, tooltip: '', border: '', enabled: true, foreground: 'theme:Secondary
-      700', visible: true, text: '', font_size: 24, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: 'fa:info'}
+- layout_properties: {grid_position: 'TJPCFF,DOYTMB'}
   name: info_button
-  layout_properties: {grid_position: 'TJPCFF,DOYTMB'}
-- name: headline_1
+  properties: {align: right, background: '', bold: true, border: '', enabled: true, font: '', font_size: 24, foreground: 'theme:Secondary 700', icon: 'fa:info', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: '', tooltip: '', underline: false, visible: true}
+  type: Button
+- layout_properties: {grid_position: 'KVLLWJ,PXZUXI'}
+  name: headline_1
   properties: {role: headline, text: Marginal Abatement Cost Curve (MACC)}
   type: Label
-  layout_properties: {grid_position: 'KVLLWJ,PXZUXI'}
-- name: button_1
-  properties: {text: Example, foreground: 'theme:White', background: 'theme:Primary
-      700'}
-  type: Button
+- event_bindings: {click: create_example_MACC}
   layout_properties: {grid_position: 'AHEMQG,PUDKCH'}
-  event_bindings: {click: create_example_MACC}
-- name: spacer_2
+  name: button_1
+  properties: {background: 'theme:Primary 700', foreground: 'theme:White', text: Example}
+  type: Button
+- layout_properties: {grid_position: 'AHEMQG,DJXWEG'}
+  name: spacer_2
   properties: {height: 32}
   type: Spacer
-  layout_properties: {grid_position: 'AHEMQG,DJXWEG'}
-- name: spacer_1
+- layout_properties: {grid_position: 'AHEMQG,GAZJUE'}
+  name: spacer_1
   properties: {height: 32}
   type: Spacer
-  layout_properties: {grid_position: 'AHEMQG,GAZJUE'}
-- name: image_1
+- layout_properties: {grid_position: 'OCNDKF,FCZRSO'}
+  name: image_1
   properties: {height: 520}
   type: Image
-  layout_properties: {grid_position: 'OCNDKF,FCZRSO'}
+container:
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
 is_package: true
