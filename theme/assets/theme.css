@@ -102,7 +102,7 @@ body {
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 300 to 900
 
-  font-family: RedHatDisplay; 
+  font-family: 'Red Hat Display'; 
   font-size: 14px;
   line-height: 1.4286;
   background-color: #fafafa;

@@ -84,7 +84,7 @@ components:
       background: ''
       bold: false
       border: ''
-      font: Red Hat Display
+      font: ''
       font_size: null
       foreground: theme:Gray 600
       icon: ''
@@ -123,10 +123,11 @@ components:
     name: text_select_a_client
     properties: {align: left, background: '', bold: true, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Client : -', tooltip: '', type: text, underline: false, visible: true}
     type: TextBox
-  - event_bindings: {pressed_enter: text_select_an_entity_pressed_enter}
+  - data_bindings: []
+    event_bindings: {pressed_enter: text_select_an_entity_pressed_enter}
     layout_properties: {grid_position: 'UDCPXC,XSHDEV'}
     name: text_select_an_entity
-    properties: {align: left, background: '', bold: true, border: '', enabled: false, font: '', font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Estate : -', tooltip: '', type: text, underline: false, visible: true}
+    properties: {align: left, background: '', bold: true, border: '', enabled: false, font: Red Hat Display, font_size: null, foreground: '', hide_text: false, italic: false, placeholder: '', role: null, spacing_above: small, spacing_below: small, text: 'Estate : -', tooltip: '', type: text, underline: false, visible: true}
     type: TextBox
   - event_bindings: {change: drop_down_client_change}
     layout_properties: {grid_position: 'HZVMNO,FVMIYP GLVKQB,OJJCSY'}
@@ -147,7 +148,7 @@ components:
       bold: false
       border: ''
       enabled: true
-      font: ''
+      font: Red Hat Display
       font_size: null
       foreground: ''
       include_placeholder: true
